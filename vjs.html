@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Player</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
+<link rel="stylesheet" href="page.css">
+</head>
+
+<body>
+
+<span id="title">Video<span id="b">Player</span> vjs-1.0.2</span>
+
+<p id="intro">
+  The best HTML5 video Player made easy for you!
+</p>
+
+<div class="selectfile">
+  <b>Choose file</b>
+  <input type="file" id="file" accept="video/mp4" hidden>
+
+  <div class="view">
+    <i class="fa-solid fa-arrow-right"></i>
+  </div>
+</div>
+
+<div class="video_player">
+  <video id="player" controls></video>
+</div>
+
+<span id="how">
+  <a href="#">How to use</a>
+  <i class="fa-solid fa-arrow-right"></i>
+</span>
+
+<div class="cdn">
+
+  <span id="head"><span id="b">CDN</span> link</span>
+
+  <b class="for">Javascript</b>
+  <div class="link">
+    <input type="text" value="(old CDN removed)">
+    <span class="copyBtn"><i class="fa-solid fa-clipboard"></i></span>
+  </div>
+
+  <b class="for">CSS</b>
+  <div class="link">
+    <input type="text" value="(old CDN removed)">
+    <span class="copyBtn"><i class="fa-solid fa-clipboard"></i></span>
+  </div>
+
+</div>
+
+<div class="social">
+  <span class="soc"><i class="fa-brands fa-youtube"></i></span>
+  <span class="soc"><i class="fa-brands fa-instagram"></i></span>
+  <span class="soc"><i class="fa-brands fa-facebook"></i></span>
+  <span class="soc"><i class="fa-brands fa-github"></i></span>
+</div>
+
+<span id="copy">&copy; 2022 made by <span id="b">Pantheon Coder</span></span>
+
+<div class="alert">Copied</div>
+
+<script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+
+<script>
+const player = new Plyr('#player');
+
+const fileInput = document.getElementById('file');
+const uploadBtn = document.querySelector('.view');
+const video = document.getElementById('player');
+
+video.style.display = "none";
+
+uploadBtn.addEventListener('click', () => {
+  fileInput.click();
+});
+
+fileInput.addEventListener('change', function () {
+  const file = this.files[0];
+
+  if (file) {
+    const url = URL.createObjectURL(file);
+
+    video.src = url;
+    video.load();
+
+    video.style.display = "block";
+
+    video.addEventListener('loadedmetadata', () => {
+      player.play().catch(() => {});
+    }, { once: true });
+  }
+});
+</script>
+
+</body>
+</html>

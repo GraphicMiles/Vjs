@@ -1,0 +1,158 @@
+body {
+  display: flex;
+  font-family: Trebuchet MS;
+  width: 100vw;
+  min-height: 100vh;
+  flex-direction: column;
+  background: #fff;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0;
+}
+
+#title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  color: #212329;
+}
+
+#b {
+  color: gold;
+  margin: .2rem;
+}
+
+#intro {
+  font-size: .8rem;
+  margin: 2rem 0;
+  text-align: center;
+  color: #212329;
+}
+
+.selectfile {
+  margin: 4rem 0;
+  width: 20rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.view {
+  height: 3rem;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #212329;
+  border-radius: .2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.view:hover {
+  background: gold;
+  border: none;
+}
+
+.view i {
+  color: #212329;
+}
+
+.view:hover i {
+  color: white;
+}
+
+.video_player {
+  width: 90%;
+  max-width: 600px;
+}
+
+video {
+  width: 100%;
+  border-radius: .5rem;
+}
+
+#how {
+  font-size: 1.2rem;
+  background: gold;
+  width: 15rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  border-radius: .2rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.cdn {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#head {
+  font-size: 1.2rem;
+  border-bottom: 2px solid gold;
+  margin-bottom: 1rem;
+}
+
+.link {
+  display: flex;
+  width: 20rem;
+  margin-bottom: 1rem;
+}
+
+.link input {
+  width: 80%;
+  height: 2.5rem;
+  border: 1px solid #212329;
+}
+
+.copyBtn {
+  width: 3rem;
+  background: gold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social {
+  display: flex;
+  margin: 1rem;
+}
+
+.soc {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #212329;
+  margin-left: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.soc i {
+  color: white;
+}
+
+#copy {
+  margin: 1rem;
+  font-weight: bold;
+}
+
+.alert {
+  position: fixed;
+  top: 0;
+  background: #212329;
+  color: white;
+  padding: 1rem;
+  transform: scale(0);
+}
